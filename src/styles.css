@@ -9,9 +9,12 @@ h2, h3 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
 }
+/* New styles */
 body {
+  padding-top: 70px; /* Adjust the value based on the height of your navigation bar */
   margin: 2em;
 }
+
 body, input[type="text"], button {
   color: #333;
   font-family: Cambria, Georgia, serif;

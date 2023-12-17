@@ -1,9 +1,6 @@
-<h2>Top Heroes</h2>
+<h2>Use Cases</h2>
 <div class="heroes-menu">
-  <a *ngFor="let hero of heroes"
-      routerLink="/detail/{{hero.id}}">
-      {{hero.name}}
-  </a>
-</div>
-
-<app-hero-search></app-hero-search>
+  <a *ngFor="let case of useCases"
+    routerLink="/{{case.path}}">
+    {{case.text}}
+</a>
