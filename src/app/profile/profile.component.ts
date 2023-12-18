@@ -10,8 +10,8 @@ import { ProfileUpdateService } from '../_services/profile-update.service';
 })
 
 export class ProfileComponent implements OnInit{
-  imageUrl: string = 'https://i.imgur.com/o9fpo46.png'; // Default image URL
-  fetchedImageUrl: string = ''; // Fetched image URL
+  imageUrl!: string; // Default image URL
+  fetchedImageData: string = ''; // Fetched image
   isLoading: boolean = false; // Loading indicator
 
   constructor(
@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit{
     private profileUpdateService: ProfileUpdateService) {}
 
   ngOnInit(): void {
-   this.profileUpdateService.updateImage(this.imageUrl);
+    this.fetchedImageData = this.profileUpdateService.imageUrlSignal();
   }
 
   saveImage() {
@@ -33,8 +33,8 @@ export class ProfileComponent implements OnInit{
     ).subscribe((response: Blob) => {
       const reader = new FileReader();
       reader.onloadend = () => {
-        this.fetchedImageUrl = reader.result as string;
-        this.profileUpdateService.updateImage(this.fetchedImageUrl);
+        this.fetchedImageData = reader.result as string;
+        this.profileUpdateService.updateImage(this.fetchedImageData);
       };
       reader.readAsDataURL(response);
     });

@@ -4,7 +4,7 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root'
 })
 export class ProfileUpdateService {
-  imageUrlSignal = signal<string>(''); // <---- create signal
+  imageUrlSignal = signal<string>('https://i.imgur.com/o9fpo46.png'); // <---- create signal default value
 
   constructor() { }
 
