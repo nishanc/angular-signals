@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { EMPTY, catchError, finalize } from 'rxjs';
+import { ProfileUpdateService } from '../_services/profile-update.service';
 
 @Component({
   selector: 'app-profile',
@@ -8,12 +9,18 @@ import { EMPTY, catchError, finalize } from 'rxjs';
   styleUrls: ['./profile.component.css']
 })
 
-export class ProfileComponent {
+export class ProfileComponent implements OnInit{
   imageUrl: string = 'https://i.imgur.com/o9fpo46.png'; // Default image URL
   fetchedImageUrl: string = ''; // Fetched image URL
   isLoading: boolean = false; // Loading indicator
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private profileUpdateService: ProfileUpdateService) {}
+
+  ngOnInit(): void {
+   this.profileUpdateService.updateImage(this.imageUrl);
+  }
 
   saveImage() {
     this.isLoading = true;
@@ -27,6 +34,7 @@ export class ProfileComponent {
       const reader = new FileReader();
       reader.onloadend = () => {
         this.fetchedImageUrl = reader.result as string;
+        this.profileUpdateService.updateImage(this.fetchedImageUrl);
       };
       reader.readAsDataURL(response);
     });
