@@ -11,7 +11,7 @@ export class NavigationBarComponent {
   title = 'Angular Signals';
   cartCount = computed(() => this.cartService.cartItems().reduce(
     (acc, item) => acc + item.quantity, 0));
-
+  
   constructor(
     public profileUpdateService: ProfileUpdateService,
     private cartService: CartService) {}

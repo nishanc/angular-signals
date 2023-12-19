@@ -1,0 +1,15 @@
+<div class="form-container">
+  <form #myForm="ngForm" (ngSubmit)="saveChanges(myForm)">
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input type="text" name="firstName" [ngModel]="firstName()" (ngModelChange)="firstName.set($event)" required>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="text" name="lastName" [ngModel]="lastName()" (ngModelChange)="lastName.set($event)" required>
+    </div>
+    <button type="submit">Save Changes</button>
+    <span *ngIf="fullName()"> {{ fullName() }} </span>
+  </form>
+</div>
+

@@ -9,11 +9,15 @@ export class DashboardComponent implements OnInit {
   useCases: NavMenu[] = [
     {
       path: 'profile',
-      text: 'Profile'
+      text: '1️⃣ Profile'
     },
     {
       path: 'shop',
-      text: 'Grocery Shop'
+      text: '2️⃣ Grocery Shop'
+    },
+    {
+      path: 'forms',
+      text: '3️⃣ Angular Forms'
     }
   ];
   constructor() {}
