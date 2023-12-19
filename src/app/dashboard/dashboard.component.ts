@@ -12,8 +12,8 @@ export class DashboardComponent implements OnInit {
       text: 'Profile'
     },
     {
-      path: 'case2',
-      text: 'Case 2'
+      path: 'shop',
+      text: 'Grocery Shop'
     }
   ];
   constructor() {}

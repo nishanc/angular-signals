@@ -1,0 +1,39 @@
+.grocery-list-container {
+  display: flex;
+  justify-content: center;
+}
+
+.grocery-card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 20px;
+}
+
+.grocery-list {
+  list-style: none;
+  padding: 0;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.add-to-cart-btn {
+  margin-left: auto;
+  padding: 8px 8px;
+  background-color: #008cba;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.368);
+}
+
+.add-to-cart-btn:hover {
+  background-color: #005f73;
+}

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { ProfileComponent } from './profile/profile.component';
+import { GroceryListComponent } from './grocery-list/grocery-list.component';
 
 @NgModule({
   imports: [
@@ -15,11 +16,12 @@ import { ProfileComponent } from './profile/profile.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  declarations: [	
+  declarations: [		
     AppComponent,
     DashboardComponent,
     NavigationBarComponent,
-      ProfileComponent
+      ProfileComponent,
+      GroceryListComponent
    ],
   providers: [
     provideClientHydration()

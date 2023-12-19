@@ -11,7 +11,7 @@ import { ProfileUpdateService } from '../_services/profile-update.service';
 
 export class ProfileComponent implements OnInit{
   imageUrl!: string; // Default image URL
-  fetchedImageData: string = ''; // Fetched image
+  fetchedImageUrl: string = ''; // Fetched image
   isLoading: boolean = false; // Loading indicator
 
   constructor(
@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit{
     private profileUpdateService: ProfileUpdateService) {}
 
   ngOnInit(): void {
-    this.fetchedImageData = this.profileUpdateService.imageUrlSignal();
+    this.fetchedImageUrl = this.profileUpdateService.imageUrlSignal();
   }
 
   saveImage() {
@@ -33,8 +33,8 @@ export class ProfileComponent implements OnInit{
     ).subscribe((response: Blob) => {
       const reader = new FileReader();
       reader.onloadend = () => {
-        this.fetchedImageData = reader.result as string;
-        this.profileUpdateService.updateImage(this.fetchedImageData);
+        this.fetchedImageUrl = reader.result as string;
+        this.profileUpdateService.updateImage(this.fetchedImageUrl);
       };
       reader.readAsDataURL(response);
     });

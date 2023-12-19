@@ -1,0 +1,10 @@
+<div class="grocery-list-container">
+  <ul class="grocery-list">
+    <li *ngFor="let item of groceryItems" class="grocery-card">
+      <div class="list-item">
+        <span>{{ item.name }}</span>
+        <button (click)="addToCart(item)" class="add-to-cart-btn">Add to Cart</button>
+      </div>
+    </li>
+  </ul>
+</div>
